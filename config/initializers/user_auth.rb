@@ -1,4 +1,3 @@
-# api/config/initializers/user_auth.rb
 module UserAuth
   # access tokenの有効期限
   mattr_accessor :access_token_lifetime
