@@ -8,7 +8,7 @@ class Api::V1::AuthTokenController < ApplicationController
 
   # userのログイン情報を確認する
   before_action :authenticate, only: [:create]
-  # 処理まえにsessionを削除する
+  # 処理前にsessionを削除する
   before_action :delete_session, only: [:create]
   # session_userを取得、存在しない場合は401を返す
   before_action :sessionize_user, only: [:refresh, :destroy]
@@ -61,9 +61,9 @@ class Api::V1::AuthTokenController < ApplicationController
     # ログイン時のデフォルトレスポンス
     def login_response
       {
-        token:access_token,
+        token: access_token,
         expires: access_token_expiration,
-        user: @user.response_json(sub:access_token_subject)
+        user: @user.response_json(sub: access_token_subject)
       }
     end
 

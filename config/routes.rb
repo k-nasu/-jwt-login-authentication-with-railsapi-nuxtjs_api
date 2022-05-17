@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
       # projects
       resources :projects, only:[:index]
+      resources :tasks, only:[:index]
     end
   end
 end

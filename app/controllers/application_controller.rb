@@ -4,6 +4,7 @@ class ApplicationController < ActionController::API
   # 認可を行う
   include UserAuthenticateService
 
+  # CSRF対策
   before_action :xhr_request?
 
   private

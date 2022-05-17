@@ -1,5 +1,7 @@
 table_names = %w(
   users
+  projects
+  tasks
 )
 
 table_names.each do |table_name|
